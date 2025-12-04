@@ -1,0 +1,6 @@
+@Homify.Monolith.Api_HostAddress = http://localhost:5186
+
+GET {{Homify.Monolith.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
