@@ -6,4 +6,18 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="AutoMapper" Version="15.1.0" />
+      <PackageReference Include="FluentValidation" Version="12.1.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Homify.Monolith.Domain\Homify.Monolith.Domain.csproj" />
+      <ProjectReference Include="..\Homify.Monolith.Infrastructure\Homify.Monolith.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Dtos\User\" />
+    </ItemGroup>
+
 </Project>

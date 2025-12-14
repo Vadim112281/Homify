@@ -7,18 +7,28 @@
     </PropertyGroup>
 
     <ItemGroup>
+        <PackageReference Include="FluentValidation" Version="12.1.1" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.3.1" />
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.2"/>
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.11" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.11">
           <PrivateAssets>all</PrivateAssets>
           <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
         </PackageReference>
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="9.0.0" />
         <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.4" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.6" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.6" />
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\Homify.Monolith.Application\Homify.Monolith.Application.csproj" />
       <ProjectReference Include="..\Homify.Monolith.Domain\Homify.Monolith.Domain.csproj" />
       <ProjectReference Include="..\Homify.Monolith.Infrastructure\Homify.Monolith.Infrastructure.csproj" />
     </ItemGroup>
+
+      <Target Name="RemoveQuarantine" AfterTargets="Build">
+    <Exec Command="xattr -d com.apple.quarantine &quot;$(TargetPath)&quot; 2&gt;/dev/null || true" />
+  </Target>
 
 </Project>
