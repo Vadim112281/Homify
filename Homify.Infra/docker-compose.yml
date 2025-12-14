@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  postgres:
+    image: postgres:16
+    container_name: homify-postgres
+    restart: always
+    environment:
+      POSTGRES_USER: homify
+      POSTGRES_PASSWORD: homify_pass 
+      POSTGRES_DB: homify_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - homify_pg_data:/var/lib/postgresql/data
+
+volumes:
+  homify_pg_data:
